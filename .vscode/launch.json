@@ -1,0 +1,203 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug CLI",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=ffbuildtool",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "ffbuildtool",
+                    "kind": "bin"
+                }
+            },
+            "args": ["download-build", "-m", "manifest_104.json", "-o", "idk"],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in library 'ffbuildtool'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--lib",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "ffbuildtool",
+                    "kind": "lib"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'gen_manifest'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=gen_manifest",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "gen_manifest",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'gen_bare'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=gen_bare",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "gen_bare",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'validate_compressed'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=validate_compressed",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "validate_compressed",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'validate_uncompressed'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=validate_uncompressed",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "validate_uncompressed",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'extract_bundle'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=extract_bundle",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "extract_bundle",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'download_build'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=download_build",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "download_build",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug example 'repair_build'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--example=repair_build",
+                    "--package=ffbuildtool"
+                ],
+                "filter": {
+                    "name": "repair_build",
+                    "kind": "example"
+                }
+            },
+            "args": [],
+            "env": {
+                "RUST_LOG": "debug",
+                "RUST_LOG_STYLE": "always"
+            },
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

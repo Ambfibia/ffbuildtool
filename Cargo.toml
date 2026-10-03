@@ -1,0 +1,57 @@
+[package]
+name = "ffbuildtool"
+version = "5.1.0"
+authors = ["OpenFusion Contributors"]
+edition = "2021"
+license = "MIT"
+
+[dependencies]
+log = "0.4.22"
+reqwest = { version = "0.12.9", features = ["stream"] }
+liblzma = { version = "0.3.5", features = ["static"], optional = true }
+serde = { version = "1.0.214", features = ["derive"] }
+serde_json = "1.0.132"
+sha2 = "0.10.8"
+tokio = { version = "1.41.1", features = ["full"] }
+uuid = { version = "1.11.0", features = ["v4", "serde"] }
+clap = { version = "4.5.20", features = ["derive"], optional = true }
+indicatif = { version = "0.17.9", features = ["tokio", "improved_unicode"], optional = true }
+futures-util = "0.3.31"
+countio = { version = "0.2.19", optional = true }
+num_cpus = "1.16.0"
+
+[lib]
+name = "ffbuildtool"
+
+[features]
+default = ["lzma", "cli"]
+lzma = ["dep:liblzma", "dep:countio"]
+cli = ["dep:clap", "dep:indicatif"]
+
+[[bin]]
+name = "ffbuildtool"
+required-features = ["cli"]
+
+[[example]]
+name = "gen_manifest"
+
+[[example]]
+name = "gen_bare"
+
+[[example]]
+name = "validate_compressed"
+
+[[example]]
+name = "validate_uncompressed"
+
+[[example]]
+name = "extract_bundle"
+
+[[example]]
+name = "download_build"
+
+[[example]]
+name = "repair_build"
+
+[dev-dependencies]
+env_logger = { version = "0.11.5", features = ["color"] }
